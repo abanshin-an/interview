@@ -1,0 +1,28 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+  error:
+    path: "/error"
+
+spring:
+  liquibase:
+    change-log: 'classpath:db/changelog/changelog-master.xml'
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:
+    url: jdbc:postgresql://localhost:5432/datalake?currentSchema=interview
+#    username: usersurvey
+#    password: zanzibar27
+    driverClassName: org.postgresql.Driver
+
+  #  flyway:
+#    schemas: survey
+#    enabled: true
+#    baseline-on-migrate: true
+  thymeleaf:
+    encoding: UTF-8
+
